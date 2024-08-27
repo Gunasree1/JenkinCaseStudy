@@ -7,18 +7,22 @@ node {
     stage('SCM Checkout')
     {
         echo "Ensuring that the pipeline is configured to clean the Jenkins workspace before checkout"
-		git branch: 'master', changelog: false, poll: false,
-		url: 'https://mohit.s.suryadevara:kYjULhCyPyXk7Pi54DJXaPxtEf5Omf52WyRdpG@innersource.accenture.com/scm/~mohit.s.suryadevara/PLSQLTestRepo1.git'
+		git branch: 'Master_Branch', changelog: false, poll: false,
+		url: https://vinod.manoharan:nWKfeHJp2U7vPevac00cN4M7XBiLScyHrTHvgK@innersource.accent
+ure.com/scm/~vinod.manoharan/jenkinforcasestudy.git'
     }
     
     stage('Managing Testing Workspace')
     {
-        bat 'IF exist "C:\\Jenkins\\Home\\workspace\\PLSQLDeployment\\CodeMigration\\TestingWorkspace" (echo \'Testing Directory Exists\') else ( mkdir "C:\\Jenkins\\Home\\workspace\\PLSQLDeployment\\CodeMigration\\TestingWorkspace" && echo \'Testing Directory Created\')'
+        bat 'IF exist "C:\\Jenkins\\Home\\workspace\\Oracle_CaseStudy\\OraclePipeline\\TestingWorkspace" (echo \'Testing Directory Exists\') else ( mkdir "C:\\Jenkins\\Home\\workspace\\Oracle_CaseStudy\\Oracle_Pipeline\\TestingWorkspace" && echo \'Testing Directory Created\')'
     }
     
     stage('Cloning the Workspace')
     {
-        bat 'git clone https://mohit.s.suryadevara:kYjULhCyPyXk7Pi54DJXaPxtEf5Omf52WyRdpG@innersource.accenture.com/scm/~mohit.s.suryadevara/PLSQLTestRepo1.git  "C:\\Jenkins\\Home\\workspace\\PLSQLDeployment\\CodeMigration\\TestingWorkspace"'
+        bat 'git clone ttps://vinod.manoharan:nWKfeHJp2U7vPevac00cN4M7XBiLScyHrTHvgK@innersource.accent
+ure.com/scm/~vinod.manoharan/jenkinforcasestudy.git 
+"C:\\Jenkins\\Home\\workspace\\Oracle_CaseStudy\\OraclePipeline\\TestingWorkspace"'
+
     }
 
     stage('Code Deployment to Testing')
